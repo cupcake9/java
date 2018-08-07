@@ -1,0 +1,31 @@
+package lti.hola.web;
+/**
+ * 
+ * @author tasneem,valli,vanshree
+ * @version 1.0
+ *
+ */
+import javax.servlet.http.HttpServletRequest;
+
+import lti.hola.bean.RegisterBean;
+import lti.hola.service.UserService;
+import lti.hola.service.UserServiceImpl;
+
+public class RegisterController {
+
+	public static boolean registration(HttpServletRequest request) {
+		RegisterBean register = new RegisterBean();
+		UserService service = new UserServiceImpl();
+		register.setName(request.getParameter("name"));
+		register.setEmail(request.getParameter("email"));
+		register.setPassword(request.getParameter("password"));
+		register.setAge(Integer.parseInt(request.getParameter("age")));
+		register.setGender(request.getParameter("gender"));
+		register.setCity(request.getParameter("city"));
+		register.setMovie(request.getParameter("movie"));
+		register.setPhoto(request.getParameter("photo"));
+		
+		return service.persist(register);
+	}
+
+}
