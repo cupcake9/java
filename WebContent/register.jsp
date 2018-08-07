@@ -1,16 +1,19 @@
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Register</title>
 </head>
 <body bgcolor="#b3ffff"> 
+<jsp:include page = "banner.jsp"></jsp:include>
 <h2>Register as a new user!</h2>
-	<form>
+	<form action="User.hola">
+	
 		First name:
 		<br> 
-		<input type="text" name="firstname" value="" required>
+		<input type="text" name="name" value="" required>
 		<br>
 		 E-mail:
 		 <br> 
@@ -26,15 +29,24 @@
 		<input type="radio" name="gender" value="female" required> Female
 		<input type="radio" name="gender" value="others" required> Others
 		<br> 
-		Age:
 		<br>
-		 <input	type="number" name="age" value="" required min="14" max="100" >
+		Age:<select name="age">
+		<% for(int a=18;a<=60;a++){ %>
+			<option value="<%=a%>"><%=a %></option>
+			<%} %>
+			</select>
+		 <br>
 		 <br>
 		  City:
-		  <br> 
-		  <input type="text" name="city" value="" required>
+		  <br>
+		  <select name="city">
+		  <% String[] cities={"Mumbai","Pune","Mangalore","Noida","Kanpur"};
+		  for(String ct:cities){ %>
+		  <option value="<%=ct%>"><%=ct%></option>
+		  <%} %>
+		  </select>
 		   <br>
-		    Movie:
+		  Favorite Movie:
 		    <br>
 		<input type="text" name="movie" value="" required> 
 		<br>
@@ -44,7 +56,8 @@
 		 <br>
 		 <br>
 		<input type="image" src="" width="100" height="50">
-		<input type="submit" value="Submit">
+		<input type="submit" value="register">
 	</form>
+	<%@ include file ="footer.html" %>
 </body>
 </html>
