@@ -1,0 +1,197 @@
+assessment questions
+
+what is di?
+
+what is bean autowiring?
+
+
+which implementation of application context gives us control to shut down container?
+ConfigurableApplicationContext
+
+code snippet for inject the values using setter or constructor injection?()
+
+which of the following annotations are used for lifecycle of spring framework?
+@PostConstruct and @PreDestroy.
+
+in spring application context, the singleton beans are by default lazy or eager?
+Lazy
+
+what is dispatcher servlet
+Front Controller
+
+what is the role of contextLoaderListner
+The ApplicationContext is where your Spring beans live. The purpose of the ContextLoaderListener is two-fold:
+to tie the lifecycle of the ApplicationContext to the lifecycle of the ServletContext and
+to automate the creation of the ApplicationContext, so you don't have to write explicit code to do create it
+- it's a convenience function.
+
+code snippet for conf view resolver in mvc
+does hibernate support DI
+NO(not sure)
+
+=>code snippet for instantiating session in hibernate.
+public class HibernateUtil {
+	public static Session getSession() {
+		Configuration cfg=new Configuration().configure();
+		SessionFactory factory=cfg.buildSessionFactory();
+		return factory.openSession();
+	}
+
+}
+
+=>what is default location for hibernate.cfg.xml?
+classpath
+--which state of object ensures sync with db when 
+which of the following converts object from transient to persistent?
+session.save();
+
+which of the following is a jsp life cycle method?
+ jspInit(), jspDestroy() _jspService()
+
+
+which of the following jsp directive is used for import in jsp?
+<%@ page import="java.util.Date" %>  
+
+which of the following is not implicit jsp object?
+The implicit objects ARE:
+request
+response
+out
+page
+exception
+pageContext
+config
+application 
+session
+
+
+code snippet: what it prints
+=> diff between getParameter() and getAttribute()
+Generally, a parameter is a string value that is most commonly known for being sent from the client 
+to the server (e.g. a form post) and retrieved from the servlet request. 
+The frustrating exception to this is ServletContext initial parameters which are string parameters 
+that are configured in web.xml and exist on the server.
+
+ 
+which of the following not a directive in  jsp?
+The directives in JSP ARE:
+page
+include
+taglib
+
+which of the following container service allows to lookup for resources?
+which of the following is correct annotation for composite key in hibernate?
+@Embeddable
+public class RolesMenu {
+    @Column(name = "RoleID")
+    private String roleID;
+
+    @Column(name = "MenuItemID")
+    private String menuItemID;
+
+    //getter, setter methods
+}
+
+ @Entity
+ @Table(name = "RolesMenuItems")
+ public class RolesMenuItems {
+
+     @EmbeddedId
+     private RolesMenu roleMenu;
+
+  /*setter getter methods */
+ }
+
+
+=>how many fetch strategies in hibernate?
+There are four fetching strategies
+1. fetch-“join” = Disable the lazy loading, always load all the collections and entities.
+2. fetch-“select” (default) = Lazy load all the collections and entities.
+3. batch-size=”N” = Fetching up to ‘N’ collections or entities, *Not record*.
+4. fetch-“subselect” = Group its collection into a sub select statement.
+
+
+which strategy fires only single query to get parent and child record?
+which xml attribute is responsible to save update delete parent child graph in db?
+Cascade
+
+which of the following is the default of loading child elements in hibernate?
+code snippet: hibernate.cfg.xml. what is the role of dialect?
+code snippet: specifing the mapping entry in cfg
+what time the servlets init() is called
+all possible ways of redirecting control from one page to another in servlet jsp?
+--what type of obj x should be?
+different scopes in servlet and jsp
+spring conf can be written in.. (select all that apply)
+which of the following is not a stereotype of component?
+which of the following makes a method transaction aware?
+which of the following is false about lazy loading?
+which of the following is the directory entry in making an error page in jsp
+
+
+a servlet is a child of ____________
+
+
+which of the following is the correct annotation for servlet
+@WebServlet
+
+which http servlet method ends session?
+session.invalidate();
+
+code snippet: identify if it's native sql or hql query
+which of the following is the correct annotation for request mapping in spring mvc?
+@RequestMapping()
+
+what does @autowired do?
+https://www.journaldev.com/2623/spring-autowired-annotation (Refer this)
+Spring @Autowired annotation is used for automatic dependency injection. 
+@Autowired annotation – We can use Spring @Autowired annotation for spring bean autowiring.
+ @Autowired annotation can be applied on variables and methods for autowiring byType. 
+We can also use @Autowired annotation on constructor for constructor based spring autowiring.
+For @Autowired annotation to work, we also need to enable annotation based configuration in 
+spring bean configuration file. This can be done by context:annotation-config element or 
+by defining a bean of type org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.
+
+which of the following are mandatory annotations for making hibernate entity?
+@Entity @Id
+
+which of the following is the correct syntax for importing external java scripts?
+code snippet: without closing of title tag> op of following code?
+
+=>var and function in JS are?
+When a variable assignment is used with a function expression var fun = function() {}, 
+many engines can infer the function name from this variable.
+Often callbacks are passed as anonymous function expressions,
+ without storing into variables: so the engine cannot determine its name.
+
+which of the following loop manages the cursor implicitly?
+foreach
+
+which of the following param type acts as the constant?
+
+
+code snippet: query with nested group functions. is it a valid sql query?
+
+which of the following statement helps in invoking db stored procedure in jdbc?
+Callable
+
+code snippet: identify the type of join
+
+
+code snippet: on cursor; try to print row count before and after fetch.
+
+
+which of the following is a synchronized collection?
+Vectors
+
+What can be done for sorting custom objects in tree set?
+Comparator
+
+
+
+
+
+
+
+
+
